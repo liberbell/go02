@@ -6,7 +6,7 @@ func main() {
 	var x int
 	var y int
 
-	x = 1
+	x = 10
 	y = 2
 
 	fmt.Printf("x=%v, type of %T\n", x, x)
