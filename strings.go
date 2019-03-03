@@ -15,4 +15,16 @@ func main() {
 	fmt.Println(book[4:])
 
 	fmt.Println(book[:4])
+
+	fmt.Println("t" + book[1:])
+
+	fmt.Println("it was ½ price!")
+
+	poem := `
+  The road goes over on
+  Down from the door where it began
+  ...
+  `
+	fmt.Println(poem)
+
 }
