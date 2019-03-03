@@ -22,7 +22,7 @@ func main() {
 	}
 	fmt.Println("-----------")
 	a := 0
-	for a < 3 {
+	for a < 10 {
 		fmt.Println(a)
 		a++
 	}
