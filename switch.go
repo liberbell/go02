@@ -1,7 +1,8 @@
 package main
 
+import fmt
 
-fucn main() {
+func main() {
   x := 2
 
   switch x {
