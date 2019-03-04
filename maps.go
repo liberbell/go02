@@ -30,4 +30,7 @@ func main() {
 	} else {
 		fmt.Println(value1)
 	}
+
+	delete(stocks, "AMZN")
+	fmt.Println(stocks)
 }
