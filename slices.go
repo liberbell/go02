@@ -8,4 +8,6 @@ func main() {
 
 	fmt.Println(len(loons)) // 3
 	fmt.Println("--------")
+
+	fmt.Println(loons[1])
 }
