@@ -9,8 +9,13 @@ func main() {
 	fmt.Println(len(loons)) // 3
 	fmt.Println("--------")
 
-	fmt.Println(loons[1])
+	fmt.Println(loons[0])
 	fmt.Println("--------")
 
 	fmt.Println(loons[1:])
+	fmt.Println("--------")
+
+	for i := 0; i < len(loons); i++ {
+		fmt.Println(loons[i])
+	}
 }
