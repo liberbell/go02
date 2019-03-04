@@ -23,7 +23,7 @@ func main() {
 	}
 
 	stocks["TSLS"] = 322.12
-
+	fmt.Println(stocks)
 	value1, ok := stocks["TSLA"]
 	if !ok {
 		fmt.Println("TSLA not found")
