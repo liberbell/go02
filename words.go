@@ -1,6 +1,9 @@
 package main
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	text := `
@@ -11,4 +14,10 @@ func main() {
   `
 
 	words := strings.Fields(text)
+	counts := map[string]int{}
+	for _, word := range words {
+		counts[strings.ToLower(word)]++
+	}
+
+	fmt.Println(counts)
 }
