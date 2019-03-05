@@ -8,6 +8,7 @@ func doubleAt(values []int, i int) {
 
 func double(n int) {
 	n *= 2
+	// return n
 }
 
 func main() {
