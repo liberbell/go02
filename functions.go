@@ -14,6 +14,6 @@ func main() {
 	val := add(1, 2)
 	fmt.Println(val)
 
-	val2 := divmod(6, 4)
-	fmt.Println(val2)
+	div, mod := divmod(6, 4)
+	fmt.Printf("div=%v mod=%v\n", div, mod)
 }
