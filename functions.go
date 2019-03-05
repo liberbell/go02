@@ -13,4 +13,7 @@ func divmod(a int, b int) (int, int) {
 func main() {
 	val := add(1, 2)
 	fmt.Println(val)
+
+	val2 := divmod(6, 4)
+	fmt.Println(val2)
 }
