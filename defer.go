@@ -10,3 +10,7 @@ func worker() {
 	defer cleanup("A")
 	fmt.Println("worker")
 }
+
+func main() {
+	worker()
+}
