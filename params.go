@@ -23,4 +23,6 @@ func main() {
 	val := 10
 	double(val)
 	fmt.Println(val)
+	doublePtr(&val)
+	fmt.Println(val)
 }
