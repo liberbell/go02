@@ -16,10 +16,11 @@ func main() {
 	fmt.Printf("%+v\n", t1)
 	fmt.Println(t1.Symbol)
 
-  t2 := {
-    Symbol: "MSFT",
-    Volume: 10,
-    Price: 99.98,
-    Buy: true,
-  }
+	t2 := Trade{
+		Symbol: "MSFT",
+		Volume: 10,
+		Price:  99.98,
+		Buy:    true,
+	}
+	fmt.Printf("%+v\n", t2)
 }
