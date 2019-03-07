@@ -20,7 +20,7 @@ func contentType(url string) (string, error) {
 }
 
 func main() {
-	ctype, err := contentType("https://linkedin.com")
+	ctype, err := contentType("https://linkedin.site")
 	if err != nil {
 		fmt.Printf("ERROR: %s\n", err)
 	} else {
