@@ -6,7 +6,7 @@ import (
 )
 
 func contentType(url string) (string, error) {
-	rest, err := http.Get(url)
+	resp, err := http.Get(url)
 	if err != nil {
 		return "", err
 	}
