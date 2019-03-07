@@ -11,6 +11,10 @@ func double(n int) {
 	// return n
 }
 
+func doublePtr(n *int) {
+	*n *= 2
+}
+
 func main() {
 	values := []int{1, 2, 3, 4}
 	doubleAt(values, 1)
