@@ -12,7 +12,7 @@ type Trade struct {
 	Buy    bool
 }
 
-func newTrade(Symbol string, Volume int, Price float64, Buy bool) (*Trade, error) {
+func NewTrade(Symbol string, Volume int, Price float64, Buy bool) (*Trade, error) {
 	if symbol == "" {
 		return nil, fmt.Errorf("Symbol can`t be empty")
 	}
@@ -25,7 +25,7 @@ func newTrade(Symbol string, Volume int, Price float64, Buy bool) (*Trade, error
 		return nil, fmt.Errorf("Price must be >= 9(was %d)", price)
 	}
 
-	Trade := &Trade{
+	trade := &Trade{
 		Symbol: symbol,
 		Volume: volume,
 		Price:  price,
@@ -43,7 +43,7 @@ func (t *Trade) Value() float64 {
 }
 
 func main() {
-	t, err := newTrade("MSFT", 10, 99.98, true)
+	t, err := NewTrade("MSFT", 10, 99.98, true)
 	if err != nil {
 		fmt.Printf("Error: can`t create trade - %s\n", err)
 		os.Exit(1)
