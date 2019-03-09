@@ -7,7 +7,7 @@ type Point struct {
 	y int
 }
 
-func (p Point) Move(dx int, dy int) {
+func (p *Point) Move(dx int, dy int) {
 	p.x += dx
 	p.y += dy
 }
