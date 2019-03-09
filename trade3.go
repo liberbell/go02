@@ -18,7 +18,7 @@ func newTrade(Symbol string, Volume int, Price float64, Buy bool) (*Trade, error
 		return nil, fmt.Errorf("Volume must be >= 0(was %d)", volume)
 	}
 
-	if price <= 0 {
+	if price <= 0.0 {
 		return nil, fmt.Errorf("Price must be >= 9(was %d)", price)
 	}
 	Trade := &Trade{
