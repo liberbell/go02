@@ -32,5 +32,9 @@ type Shape interface {
 }
 
 func main() {
-  
+  s := &Square{20}
+  fmt.Println(s.Area())
+
+  c := &Circle{10}
+  fmt.Println(c.Area())
 }
