@@ -26,3 +26,11 @@ func samAreas(shapes []shapes) float64 {
 	}
 	return total
 }
+
+type Shape interface {
+  Area float64
+}
+
+func main() {
+  
+}
