@@ -36,7 +36,7 @@ func (s *Square) Move(dx int, dy int) {
 	s.Center.Move(dx, dy)
 }
 
-func (s, *Square) Area() int {
+func (s *Square) Area() int {
 	return s.Length * s.Length
 }
 
