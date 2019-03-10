@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 type Square struct {
 	Center Point
@@ -24,4 +27,12 @@ func (s, *Square) Move(dx int, dy int) {
 
 func (s, *Square) Area() int {
 	return s.Length * s.Length
+}
+
+func main() {
+	s, err := NewSquare(1, 1, 10)
+	if err != nil {
+		log.Fatalf("Error:can`t create square")
+	}
+	s.Move(2, 3)
 }
