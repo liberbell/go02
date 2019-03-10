@@ -15,4 +15,9 @@ func NewSquare(x int, y int, length int) (*Square, error) {
 		Center: Point{x, y},
 		Length: length,
 	}
+	return s, nil
+}
+
+func (s, *Square) Move(dx int, dy int) {
+	s.Center.Move(dx, dy)
 }
