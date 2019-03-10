@@ -37,4 +37,8 @@ func main() {
 
   c := &Circle{10}
   fmt.Println(c.Area())
+
+  shapes := []Shape{s, c}
+  sa := sumAreas(shapes)
+  fmt.Println(sa)
 }
