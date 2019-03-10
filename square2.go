@@ -5,13 +5,11 @@ import (
 	"log"
 )
 
-// Point is a 2d point
 type Point struct {
 	X int
 	Y int
 }
 
-// Move moves the point
 func (p *Point) Move(dx int, dy int) {
 	p.X += dx
 	p.Y += dy
