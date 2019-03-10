@@ -10,7 +10,7 @@ type Point struct {
 	Y int
 }
 
-func (p, *Point) Move(dx int, dy int) {
+func (p *Point) Move(dx int, dy int) {
 	p.X += dx
 	p.Y += dy
 }
@@ -32,7 +32,7 @@ func NewSquare(x int, y int, length int) (*Square, error) {
 	return s, nil
 }
 
-func (s, *Square) Move(dx int, dy int) {
+func (s *Square) Move(dx int, dy int) {
 	s.Center.Move(dx, dy)
 }
 
