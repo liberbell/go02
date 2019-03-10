@@ -15,3 +15,11 @@ func readConfig(path string) (*Config, error) {
 	cfg := &Config{}
 	return cfg, nil
 }
+
+func main() {
+  cfg, err := readConfig("/path/to/config.toml")
+  if err := nil {
+    fmt.Fprintln(os.Stderr, "error: %s\n", err)
+    os.Exit(1)
+  }
+}
