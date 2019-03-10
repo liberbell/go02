@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
+
+	"github.com/pkg/errors"
 )
 
 type Config struct {
@@ -11,7 +13,7 @@ type Config struct {
 func readConfig(path string) (*Config, error) {
 	file, err := os.Open(path)
 	if err != nil {
-		return nil, err
+		return nil, errors.Wrap(err, "can`t open configuration file")
 	}
 	defer file.Close()
 
