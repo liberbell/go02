@@ -1,6 +1,9 @@
 package main
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 type Square struct {
 	Length float64
@@ -28,17 +31,17 @@ func samAreas(shapes []shapes) float64 {
 }
 
 type Shape interface {
-  Area float64
+	Area() float64
 }
 
 func main() {
-  s := &Square{20}
-  fmt.Println(s.Area())
+	s := &Square{20}
+	fmt.Println(s.Area())
 
-  c := &Circle{10}
-  fmt.Println(c.Area())
+	c := &Circle{10}
+	fmt.Println(c.Area())
 
-  shapes := []Shape{s, c}
-  sa := sumAreas(shapes)
-  fmt.Println(sa)
+	shapes := []Shape{s, c}
+	sa := sumAreas(shapes)
+	fmt.Println(sa)
 }
