@@ -35,4 +35,6 @@ func main() {
 		log.Fatalf("Error:can`t create square")
 	}
 	s.Move(2, 3)
+	fmt.Printf("%+v\n", s)
+	fmt.Println(s.Area())
 }
