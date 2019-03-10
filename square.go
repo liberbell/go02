@@ -5,6 +5,16 @@ import (
 	"log"
 )
 
+type Point struct {
+	X int
+	Y int
+}
+
+func (p, *Point) Move(dx int, dy int) {
+	p.X += dx
+	p.Y += dy
+}
+
 type Square struct {
 	Center Point
 	Length int
@@ -18,6 +28,7 @@ func NewSquare(x int, y int, length int) (*Square, error) {
 		Center: Point{x, y},
 		Length: length,
 	}
+
 	return s, nil
 }
 
