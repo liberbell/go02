@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 func safeValue(vals []int, index int) int {
@@ -19,10 +18,13 @@ func main() {
 	// v := vals[10]
 	// fmt.Println(v)
 
-	file, err := os.Open("no-such-file")
-	if err != nil {
-		panic(err)
-	}
-	defer file.Close()
-	fmt.Println("file opened")
+	// file, err := os.Open("no-such-file")
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// defer file.Close()
+	// fmt.Println("file opened")
+
+	v := safeValue([]int{1, 2, 3}, 10)
+	fmt.Println(v)
 }
