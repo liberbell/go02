@@ -7,6 +7,8 @@ import (
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/pkg/errors"
 )
 
 func killServer(pidFile string) error {
