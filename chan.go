@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	// ch := make(chan int)
+	ch := make(chan int)
 	// <-ch
 	// fmt.Println("Here")
 	go func() {
