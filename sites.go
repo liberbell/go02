@@ -22,7 +22,7 @@ func main() {
 		"https://golang.org",
 		"https://api.github.com",
 		"https://httpbin.org/xml",
-		"http://somedomain.com",
+		"http://somedomain1.com",
 	}
 
 	for _, url := range urls {
