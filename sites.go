@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"sync"
 )
 
 func returnType(url string) {
@@ -25,9 +26,14 @@ func main() {
 		"http://somedomain1.com",
 	}
 
+	var wg sync.WaitGroup
+
 	for _, url := range urls {
+		wg.Add(1)
 		go func(url string) {
 			returnType(url)
+			wg.Done()
 		}(url)
 	}
+	wg.Wait()
 }
