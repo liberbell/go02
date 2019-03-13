@@ -6,4 +6,9 @@ func main() {
 	go func() {
 		ch1 <- 42
 	}()
+
+  select{
+  case val := <-ch1
+  fmt.Printf("got %d from ch1\n", val)
+  }
 }
