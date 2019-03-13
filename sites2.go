@@ -23,4 +23,13 @@ func main() {
 		"https://api.github.com",
 		"https://httpbin.org/xml",
 	}
+	ch := make(chan string)
+	for _, url := range urls {
+		go returnType(url, ch)
+	}
+
+	for range urls {
+		out := <-ch
+		fmt.Println(out)
+	}
 }
