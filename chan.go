@@ -14,6 +14,7 @@ func main() {
 	}()
 	val := <-ch
 	fmt.Printf("got %d\n", val)
+	fmt.Println("-----------")
 
 	go func() {
 		for i := 0; i < 3; i++ {
@@ -27,4 +28,5 @@ func main() {
 		val := <-ch
 		fmt.Printf("recieved %d\n", val)
 	}
+	fmt.Println("-----------")
 }
