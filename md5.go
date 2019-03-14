@@ -79,6 +79,7 @@ func main() {
 	}
 
 	out := make(chan *result)
+	path := "nasa-logs"
 	for path, sig := range sigs {
 		go md5Worker(path, sig, out)
 	}
