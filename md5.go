@@ -73,7 +73,7 @@ func md5Worker(path string, sig string, out chan *result) {
 }
 
 func main() {
-	sigs, err := parseSignaturesFile("md5sum.txt")
+	sigs, err := parseSignaturesFile("nasa/md5sum.txt")
 	if err != nil {
 		log.Fatalf("error: can't read signaure file - %s", err)
 	}
