@@ -17,4 +17,6 @@ func main() {
 	if err != nil {
 		log.Fatalf("error: can`t opne config file - %s\n", err)
 	}
+
+	defer file.Close()
 }
