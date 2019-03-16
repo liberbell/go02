@@ -20,7 +20,7 @@ func Sqrt(val float64) (float64, error) {
 	for i := 0; i < 10000; i++ {
 		if Abs(guess*guess-val) <= epsilon {
 			return guess, nil
-
 		}
+		guess = (val/guess + guess) / 2.0
 	}
 }
