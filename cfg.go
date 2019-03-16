@@ -1,8 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
+
+	toml "github.com/pelletier/go-toml"
 )
 
 type Config struct {
@@ -25,4 +28,5 @@ func main() {
 	if err := dec.Decode(cfg); err != nil {
 		log.Fatalf("error: can`t decode configuration file - %s\n", err)
 	}
+	fmt.Printf("%+v\n", cfg)
 }
