@@ -17,3 +17,9 @@ func TestSimple(t *testing.T) {
 		t.Fatalf("bad value - %f", val)
 	}
 }
+
+func BenchmarkSqrt(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_, err := Sqrt(float64(i))
+	}
+}
