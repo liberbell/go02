@@ -34,6 +34,15 @@ func TestMany(t *testing.T) {
 		if err != nil {
 			t.Fatalf("bad value - %s", record[1])
 		}
+
+		t.Run(fmt.Sprintf("%f", val), func(t *testing.T) {
+			out, err := nil {
+				t.Fatal(err)
+			}
+			if !almostEqual(out, expected) {
+				t.Fatalf("%f != %f", out, expected)
+			}
+		})
 	}
 }
 
