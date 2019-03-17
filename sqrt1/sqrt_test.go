@@ -1,8 +1,11 @@
 package sqrt
 
 import (
+	"encoding/csv"
 	"fmt"
+	"io"
 	"os"
+	"strconv"
 	"testing"
 )
 
@@ -16,6 +19,22 @@ func TestMany(t *testing.T) {
 		t.Fatalf("can`t open cases file - %s", err)
 	}
 	defer file.Close()
+
+	rdr := csv.NewReader(file)
+	for {
+		record, err := rdr.Read()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			t.Fatalf("error reading cases file - %s", err)
+		}
+
+		val, err := strconv.ParseFloat(record[0], 64)
+		if err != nil {
+			t.Fatalf("bad value - %s", record[1])
+		}
+	}
 }
 
 func TestSimple(t *testing.T) {
