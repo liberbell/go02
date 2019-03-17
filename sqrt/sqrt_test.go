@@ -17,3 +17,16 @@ func TestSimple(t *testing.T) {
 		t.Fatalf("vad value - %f", val)
 	}
 }
+
+type testCase struct {
+	value    float64
+	expected float64
+}
+
+func TestMany(t *testing.T) {
+	testCases := []testCase{
+		{0.0, 0.0},
+		{2.0, 1.414214},
+		{9.0, 3.0},
+	}
+}
