@@ -39,6 +39,7 @@ func TestMany(t *testing.T) {
 			out, err := nil {
 				t.Fatal(err)
 			}
+			
 			if !almostEqual(out, expected) {
 				t.Fatalf("%f != %f", out, expected)
 			}
