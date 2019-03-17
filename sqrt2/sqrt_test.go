@@ -10,6 +10,10 @@ func TestSimple(t *testing.T) {
 	val, err := Sqrt(2)
 
 	if err != nil {
-		t.Fatalf("error in calculation - %s", val)
+		t.Fatalf("error in calculation - %s", err)
+	}
+
+	if !almostEqual(val, 1.414214) {
+		t.Fatalf("bad value - %f", val)
 	}
 }
