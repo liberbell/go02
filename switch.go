@@ -25,6 +25,5 @@ func main() {
 		fmt.Println("x is big")
 	default:
 		fmt.Println("x is small")
-
 	}
 }
