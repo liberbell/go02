@@ -12,6 +12,10 @@ func almostEqual(v1, v2 float64) bool {
 
 func TestMany(t *testing.T) {
 	file, err := os.Open("sqrt_cases.csv")
+	if err != nil {
+		t.Fatalf("can`t open cases file - %s", err)
+	}
+	defer file.Close()
 }
 
 func TestSimple(t *testing.T) {
