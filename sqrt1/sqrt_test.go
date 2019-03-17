@@ -32,6 +32,11 @@ func TestMany(t *testing.T) {
 
 		val, err := strconv.ParseFloat(record[0], 64)
 		if err != nil {
+			t.Fatalf("bad value - %s", record[0])
+		}
+
+		expected, err := strconv.ParseFloat(record[1], 64)
+		if err != nil {
 			t.Fatalf("bad value - %s", record[1])
 		}
 
