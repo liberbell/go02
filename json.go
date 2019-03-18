@@ -17,7 +17,7 @@ var data = `
 
 type Request struct {
 	Login  string  `json:"user"`
-	Type   strign  `json:"type"`
+	Type   string  `json:"type"`
 	Amount float64 `json:"amount"`
 }
 
