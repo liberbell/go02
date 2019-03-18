@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"os"
 )
 
 var data = `
@@ -30,4 +31,15 @@ func main() {
 		log.Fatalf("error: cant`t decode - %s", err)
 	}
 	fmt.Printf("got: %+v\n", req)
+
+	prepBalance := 8500000.0
+	resp := map[string]interface{}{
+		"ok":      true,
+		"balance": prepBalance + req.Amount,
+	}
+
+	enc := json.NewEncoder(os.Stdout)
+	if err := enc.Encode(resp); err != nil {
+		log.Fatalf("error: can`t encode - %s", err)
+	}
 }
