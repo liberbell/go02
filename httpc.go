@@ -24,4 +24,12 @@ func main() {
 
 	io.Copy(os.Stdout, resp.Body)
 	fmt.Println("-----------")
+
+	job := &Job{
+		User:   "Saitama",
+		Action: "punch",
+		Count:  1,
+	}
+
+	var buf Bytes.Buffer
 }
