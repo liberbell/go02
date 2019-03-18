@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -22,4 +23,5 @@ func main() {
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
+	fmt.Println("-----------")
 }
