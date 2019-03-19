@@ -11,6 +11,7 @@ type User struct {
 	Name        string `json:"name"`
 	PublicRepos int    `json:"public_repos"`
 	Url         string `json:"url"`
+	Type        string `json:type`
 }
 
 func userInfo(login string) (*User, error) {
