@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 )
@@ -17,4 +18,11 @@ func userInfo(login string) (*User, error) {
 		return nil, err
 	}
 	defer resp.Body.Close()
+
+	user := &User{}
+	dec := json.NewDecoder(resp.Body)
+	if err := dec.Decode(user); err != nil {
+		return nil, err
+	}
+	return user, nil
 }
