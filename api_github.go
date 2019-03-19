@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -25,4 +26,12 @@ func userInfo(login string) (*User, error) {
 		return nil, err
 	}
 	return user, nil
+}
+
+func main() {
+	user, err := userInfo("liberbell")
+	if err != nil {
+		log.Fatalf("error: %s", err)
+	}
+	fmt.Printf("%+v\n", user)
 }
