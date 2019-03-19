@@ -38,4 +38,11 @@ func main() {
 		log.Fatalf("error: can`t encode job - %s", err)
 	}
 
+	resp, err := http.Post("https://httpbin.org/post", "application/json", &buf)
+	if err != nil {
+		log.Fatalf("error: can`t call httpbin.org")
+	}
+
+	defer resp.Body.Close()
+	io.Copy(os.Stdout, resp.Body)
 }
