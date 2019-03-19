@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"log"
@@ -32,4 +33,9 @@ func main() {
 	}
 
 	var buf Bytes.Buffer
+	enc := json.NewEncoder(&buf)
+	if err := enc.Encode(job); err != nil {
+		log.Fatalf("error: can`t encode job - %s", err)
+	}
+
 }
