@@ -19,6 +19,7 @@ type MathRequest struct {
 type MathResponse struct {
 	Error  string  `json:"error"`
 	Result float64 `json:"result"`
+	Answer string  `json:"answer"`
 }
 
 func main() {
