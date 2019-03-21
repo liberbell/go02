@@ -52,7 +52,7 @@ func mathHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("content-type", "applicakton/json")
-	if resp.Error != nil {
+	if resp.Error != "" {
 		w.WriteHeader(http.StatusBadRequest)
 	}
 
