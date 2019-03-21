@@ -43,9 +43,24 @@ func mathHandler(w http.ResponseWriter, r *http.Request) {
 		resp.Result = req.Left * req.Right
 	case "/":
 		if req.Right == 0.0 {
-
+			resp.Error = "division by zero"
+		} else {
+			resp.Result = req.Left / req.Right
 		}
+	default:
+		resp.Error = fmt.Sprintf("unknown operation: %s", req.Op)
 	}
+
+	w.Header().Set("content-type", "applicakton/json")
+	if resp.Error != nil {
+		w.WriteHeader(http.StatusBadRequest)
+	}
+
+	enc := json.NewEncoder(w)
+	if err := enc.Encode(resp); err != nil {
+		log.Printf("can`t encode %v - %s", resp, err)
+	}
+
 }
 
 func main() {
