@@ -33,7 +33,7 @@ func mathHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	resp := &MathResponse
+	resp := &MathResponse{}
 	switch req.Op {
 	case "+":
 		resp.Result = req.Left + req.Right
