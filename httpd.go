@@ -30,8 +30,19 @@ func mathHandler(w http.ResponseWriter, r *http.Request) {
 
 	if err := dec.Decode(req); err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	resp := &MathResponse
+	switch req.Op {
+	case "+":
+		resp.Result = req.Left + req.Right
+	case "-":
+		resp.Result = req.Left - req.Right
+
 	}
 }
+
 func main() {
 	http.HandleFunc("/hello", helloHandler)
 	if err := http.ListenAndServe(":8080", nil); err != nil {
