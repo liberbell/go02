@@ -39,7 +39,12 @@ func mathHandler(w http.ResponseWriter, r *http.Request) {
 		resp.Result = req.Left + req.Right
 	case "-":
 		resp.Result = req.Left - req.Right
+	case "*":
+		resp.Result = req.Left * req.Right
+	case "/":
+		if req.Right == 0.0 {
 
+		}
 	}
 }
 
