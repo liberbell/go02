@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -22,6 +23,15 @@ type MathResponse struct {
 	Answer string  `json:"answer"`
 }
 
+func mathHandler(w http.ResponseWriter, r *http.Request) {
+	defer r.Body.Close()
+	dec := json.NewDecoder(r.Body)
+	req := &MathRequest{}
+
+	if err := dec.Decode(req); err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+	}
+}
 func main() {
 	http.HandleFunc("/hello", helloHandler)
 	if err := http.ListenAndServe(":8080", nil); err != nil {
