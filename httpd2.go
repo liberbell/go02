@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"sync"
 )
@@ -19,4 +20,7 @@ type Entry struct {
 func sendResponse(entry *Entry, w http.ResponseWriter) {
 	w.Header().Set("content-type", "application/json")
 	enc := json.NewEncoder(w)
+	if err := enc.Encode(entry); err != nil {
+		log.Printf("error encode %+v - %s", entry, err)
+	}
 }
