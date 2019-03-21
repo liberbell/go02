@@ -60,7 +60,6 @@ func mathHandler(w http.ResponseWriter, r *http.Request) {
 	if err := enc.Encode(resp); err != nil {
 		log.Printf("can`t encode %v - %s", resp, err)
 	}
-
 }
 
 func main() {
