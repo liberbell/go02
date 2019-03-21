@@ -24,3 +24,7 @@ func sendResponse(entry *Entry, w http.ResponseWriter) {
 		log.Printf("error encode %+v - %s", entry, err)
 	}
 }
+
+func kvPostHandler(w http.ResponseWriter, r *http.Request) {
+
+}
