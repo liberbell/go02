@@ -34,4 +34,15 @@ func kvPostHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	dbLock.Lock()
+	defer dbLock.Unlock()
+	db[entry.Key] = entry.Value
+
+	sendResponse(entry, w)
+}
+
+func kvGetHandler(w http.ResponseWriter, r *http.Request) {
+	key := r.URL.Path[4]
+
+	dbLock.Lock()
+	defer dbLock.Unlock()
 }
